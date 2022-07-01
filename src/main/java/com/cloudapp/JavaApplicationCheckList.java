@@ -47,7 +47,6 @@ public class JavaApplicationCheckList implements CheckListInterface {
 			}
 			// Fetch Docker file for analyzing the deployment strategy in cloud.
 			if (downloadUrl != null && downloadUrl.contains("Docker")) {
-				System.out.println("Inside Docker");
 				String fileContent = IOUtils.toString(new URI(downloadUrl), Charset.defaultCharset());
 				dockerCheck(downloadUrl, fileContent, checkListMap);
 			} else {
@@ -86,16 +85,16 @@ public class JavaApplicationCheckList implements CheckListInterface {
 	public void dbDependency(String fileContent, Map<String, Set<String>> map) {
 		if (fileContent.contains("mysql-connector-java")) {
 			map.get("Java").add("DB_COMPONENT");
-			System.out.println("Packaging is declared in application : MYSQL");
+			System.out.println("DB connection established in application : MYSQL");
 		}else if (fileContent.contains("postgresql")) {
 			map.get("Java").add("DB_COMPONENT");
-			System.out.println("Packaging is declared in application : postgresql");
+			System.out.println("DB connection established in application : postgresql");
 		}else if (fileContent.contains("mongodb")) {
 			map.get("Java").add("DB_COMPONENT");
-			System.out.println("Packaging is declared in application : mongodb");
+			System.out.println("DB connection established in application : mongodb");
 		}else if (fileContent.contains("ojdbc")) {
 			map.get("Java").add("DB_COMPONENT");
-			System.out.println("Packaging is declared in application : Oracle");
+			System.out.println("DB connection established in application : Oracle");
 		}else {
 			map.get("Java").add("NO_DB_COMPONENT");
 			System.out.println("No DB connection established in the application");

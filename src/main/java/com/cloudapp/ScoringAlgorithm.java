@@ -63,6 +63,7 @@ public class ScoringAlgorithm {
 			System.out.println("Base Criteria check failed");
 		}
 		System.out.println("Out Map Result"+deploymentStrategyMap);
+        System.out.println("Weightage for each deployment environment for this application"+deploymentStrategyMap);
 		return deploymentStrategyMap;
 	}
 	/**
