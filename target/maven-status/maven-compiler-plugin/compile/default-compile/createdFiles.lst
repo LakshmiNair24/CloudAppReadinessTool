@@ -1,0 +1,6 @@
+com/cloudapp/ScoringAlgorithm.class
+com/cloudapp/ScoringAlgoUtil.class
+com/cloudapp/ScoringAlgoConstants.class
+com/cloudapp/JavaApplicationCheckList.class
+com/cloudapp/GitHubApi.class
+com/cloudapp/CloudAppReadinessApplication.class
